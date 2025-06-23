@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 120 25% 92%; /* #eaf1e5 */
+    --foreground: 0 0% 15%;
+    --card: 120 25% 92%;
+    --card-foreground: 0 0% 15%;
+    --popover: 120 25% 92%;
+    --popover-foreground: 0 0% 15%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 120 25% 92%;
+    --secondary: 0 0% 60%;
+    --secondary-foreground: 0 0% 15%;
+    --muted: 0 0% 60%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 60%;
+    --accent-foreground: 0 0% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 120 25% 92%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 15%;
+    --radius: 1.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-color: #eaf1e5;
+    font-size: 16px;
+    font-family: "Geist Mono", monospace;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
+
+/* Remove all shadows and backgrounds */
+.card-outline {
+  @apply border border-foreground/60 rounded-3xl bg-transparent;
+  box-shadow: none !important;
+}
+
+.input-outline {
+  @apply border border-foreground/60 rounded-2xl bg-transparent;
+  box-shadow: none !important;
+}
+
+.button-outline {
+  @apply border border-foreground/60 rounded-2xl bg-transparent hover:bg-foreground/10 text-foreground;
+  box-shadow: none !important;
+}
+
+.button-outline:disabled {
+  @apply border-muted/60 text-muted cursor-not-allowed;
+}
+
+.button-filled {
+  @apply border border-foreground rounded-2xl bg-foreground text-background hover:bg-transparent hover:text-foreground;
+  box-shadow: none !important;
+}
+
+.button-filled:disabled {
+  @apply border-muted bg-muted text-muted-foreground cursor-not-allowed;
+}
+
+/* List separators */
+.list-separator {
+  @apply border-b border-foreground/30;
+}
+
+/* Remove all default card styling */
+.card {
+  background: transparent !important;
+  box-shadow: none !important;
+}
